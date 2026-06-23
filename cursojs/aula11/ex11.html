@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasileiro?</title>
+</head>
+<body>
+    <h1>Estrangeiro ou brasileiro?</h1>
+
+    Escreva qual seu país nativo: <input type="text" name="txtp" id="txtp">
+    <input type="button" value="enviar" onclick="resultado()">
+
+    <div id="nacionalidade"></div>
+
+    <script>
+        function resultado(){
+            var txtp = document.getElementById('txtp').value
+            var nac = document.getElementById('nacionalidade')
+
+            nac.innerHTML = `<p>Nacionalidade: ${txtp}</p>`
+
+            if (txtp == 'Brasil' || txtp == 'brasil') {
+                nac.innerHTML += '<p>Você é brasileiro</p>'
+            } else {
+                nac.innerHTML += '<p>Você é estrangeiro!</p>'
+            }
+        }
+    </script>
+</body>
+</html>

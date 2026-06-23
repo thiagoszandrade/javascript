@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular idade</title>
+    <style>
+        body {
+            font: normal 18pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de idade</h1>
+    <form id="meu_formulario">
+        <label for="data_n">Data de nascimento: </label>
+        <input type="number" name="data_n" id="data_n">
+
+        <input type="button" value="enviar" onclick="resultado()">
+        <input type="reset" value="limpar">
+
+        <p id="data_atual"></p>
+    </form>
+    <p id="res_idade"></p>
+    <script>
+       
+
+
+
+        var dataAtual = new Date().getFullYear()
+        var data_atual = document.getElementById('data_atual')
+        var resIdade = document.getElementById('res_idade')
+
+        function resultado() {
+            var data_nac = document.getElementById('data_n')
+            var dataN = Number(data_nac.value)
+
+            data_atual.innerHTML = `Estamos no ano de ${dataAtual}`
+
+            var idadeSoma = dataAtual - dataN
+
+            resIdade.innerHTML = `Sua idade é de ${idadeSoma} anos`
+        }
+    </script>
+</body>
+</html>
